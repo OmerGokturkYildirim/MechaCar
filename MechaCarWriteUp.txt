@@ -1,0 +1,133 @@
+Linear regression
+
+Multiple Linear regression are used.
+On the first step MechaCar_mpg.csv file is read and linear regression run on all the variables.
+
+MechaCar_data <- read.csv('MechaCar_mpg.csv')
+
+Regression_model=lm(mpg ~ vehicle.length + vehicle.weight + spoiler.angle + ground.clearance + AWD,data=MechaCar_data) 
+summary(Regression_model)
+
+
+Coefficients:
+     (Intercept)    vehicle.length    vehicle.weight     spoiler.angle  
+      -1.040e+02         6.267e+00         1.245e-03         6.877e-02  
+ground.clearance               AWD  
+       3.546e+00        -3.411e+00  
+
+next step summary statistics are run on Regression_model
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-19.4701  -4.4994  -0.0692   5.4433  18.5849 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
+vehicle.length    6.267e+00  6.553e-01   9.563 2.60e-12 ***
+vehicle.weight    1.245e-03  6.890e-04   1.807   0.0776 .  
+spoiler.angle     6.877e-02  6.653e-02   1.034   0.3069    
+ground.clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
+AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
+
+
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Multiple R-Squared is 0.7149, Adjusted R-squared:0.6825
+
+Residual Standard Error is 8.744 on 44 degrees of freedom
+
+F-Statistic is 22.07 on 5 and 44 DF, P-Value is 5.35e-11
+
+
+As a result it is seen that vehicle length and ground clearance provided a non-random amount of variance to the mpg values in the dataset.
+It means, these variables have a significant impact on mpg values.
+The slope of our linear model will not be zero.
+
+There are linear relationships between some of the independent variables, vehicle length and ground clearance, and the dependent variable of mpg values.
+
+Although there are significant independent variables, this linear model does not predict mpg of MechaCar prototypes effectively.
+Since the intercept was also statistically significant, there are other variables and factors that contribute to the mpg values that are not in our current model.
+
+We need make extra research
+
+
+On the next step Suspension_Coil.csv is read
+
+Suspension_Coil_Data <- read.csv('Suspension_Coil.csv')
+
+Suspension Coil Summary
+
+PSI
+Mean: 1499
+Median: 1500
+Variance: 62.29
+Standard Dev.: 7.89
+
+Suspension coils shows that the variance of the suspension coils must not exceed 100 pounds per inch.
+Data summary table shows that PSI variance is 62, which is well below the specifications. So, the current manufacturing data meets the current design specifications.
+
+Suspension Coil t-Test
+
+One Sample t-test
+
+data:  log10(suspension_data$PSI)
+t = -7972765, df = 149, p-value < 2.2e-16
+alternative hypothesis: true mean is not equal to 1499
+95 percent confidence interval:3.175361 3.176103
+sample estimates:mean of x 3.175732 
+
+RScript file, determine if the suspension coil’s pound-per-inch results are statistically different from the mean population results of 1,500 pounds per inch.
+Data shows that p-value is close to zero. It means there is a statistical difference between the observed sample mean and the population mean.
+
+-----------------------
+Study
+
+We are looking for that CO2 of the car does affect buyers while buying cars.
+
+The null hypothesis Ho is that, There isn't any relationship between consumer behavior while buying cars and the car's CO2 emissions.
+
+The alternative hypothesis Ha is that There is a relationship between consumer behavior while buying cars and the car's CO2 emissions.
+
+Although first consideration of car customers is the price of the car, we try to understand that CO2 emmisions of the car can change their buying options.
+
+Every year we see new electric, hybrid cars from all brands. Also, toyota Mirai is using hydrogen fuel cell on 70's and 80's people did not have another option but now they have.
+
+We need to get fuel emmision amounts of all kind of cars using gasoline,hybrid, electric, Natural gas, hydrogen, Lpg vs. Also we need to find these data for sedan, Suv, truck vs.
+
+Getting a decent enough sample size for each type of car would also be easier for us.
+
+We will get footprint calcution for each car and estimate CO2 emmision.
+Average distance traveled of each car and how many liters per kilometer.
+
+This study helps Mechacar for competion but this is not enough. We know that people have different concerns, price, safety, comfortablity even color. 
+Completing all these studies help us to find customer behaviors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

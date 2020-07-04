@@ -1,7 +1,7 @@
 
-library(tidyverse) #load tidyverse library
+library(tidyverse)
 .Internal(setwd("C:/Users/OgyYi/Documents/Class/R"))
-MechaCar_data <- read.csv('MechaCar_mpg.csv') #import dataset
+MechaCar_data <- read.csv('MechaCar_mpg.csv')
 
 
 Regression_model=lm(mpg ~ vehicle.length + vehicle.weight + spoiler.angle + ground.clearance + AWD,data=MechaCar_data) 
